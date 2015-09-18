@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Top5</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+		<nav>
+				<% if current_user %>
+					<span><%= link_to current_user.username, @user %></span>
+					<%= link_to 'log out', sessions_path, method: :delete %>
+				<% else %>
+					<%= link_to 'sign up', new_user_path %>
+					<%= link_to 'log in', login_path %>
+				<% end %>
+		</nav>
+	</header>
+	<% if flash[:notice] %>
+		<%=flash[:notice] %>
+	<%end%>
+<%= yield %>
+
+</body>
+</html>

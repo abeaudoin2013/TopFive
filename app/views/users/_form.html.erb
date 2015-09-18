@@ -1,0 +1,40 @@
+<%= form_for @user do |f| %>
+	<p>
+		<%= f.label :username %><br>
+		<%= f.text_field :username, required: true %>
+	</p>
+	<p>
+		<%= f.label :email %><br>
+		<%= f.email_field :email, required: true %>
+	</p>
+		<% if @user.new_record? %> 
+			<p>
+				<%= f.label :password %><br>
+				<%= f.password_field :password, required: true %>
+			</p>
+		<% end %>
+	<p>
+		<%= f.label :occupation %><br>
+		<%= f.text_field :occupation %>
+	</p>
+	<p>
+		<%= f.label :age %><br>
+		<%= f.number_field :age %>
+	</p>
+		<%= f.label :hometown %><br>
+		<%= f.text_field :hometown %>
+	<p>
+
+	</p>
+		<%= f.label :instrument_of_choice %><br>
+		<%= f.text_field :instrument %>
+	<p>
+
+	</p>
+		<p>
+			<%= f.submit(@user.new_record? ? 'sign up' : 'edit account') %>
+		</p>
+<% end %>
+
+
+
