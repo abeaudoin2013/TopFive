@@ -2,26 +2,32 @@
 <html>
 <head>
   <title>Top5</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<header>
-		<nav>
+		<nav id='hi'>
 				<% if current_user %>
-					<span><%= link_to current_user.username, @user %></span>
-					<%= link_to 'log out', sessions_path, method: :delete %>
+					<span>Hello, <%= link_to current_user.username, profile_path %></span>
+					<%= link_to 'Latest Top Five', root_path %>
+					<%= link_to 'Edit', edit_user_path(current_user.id) %>
+					<%= link_to 'Log Out', sessions_path, method: :delete %>
+					<%= link_to 'Make New Post', new_post_path %>
 				<% else %>
-					<%= link_to 'sign up', new_user_path %>
-					<%= link_to 'log in', login_path %>
+					<%= link_to 'Sign Up', new_user_path %>
+					<%= link_to 'Log In', login_path %>
 				<% end %>
 		</nav>
 	</header>
-	<% if flash[:notice] %>
-		<%=flash[:notice] %>
-	<%end%>
-<%= yield %>
+		<% if flash[:notice] %>
+			<%= flash[:notice] %>
+		<%end%>
+	<main>
+	
+	<%= yield %>
+	</main>
 
 </body>
 </html>

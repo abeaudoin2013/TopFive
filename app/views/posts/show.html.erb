@@ -1,2 +1,19 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<p><%= @post.body %></p>
+
+<p>by <%= link_to @post.user.username, @post.user %></p>
+<% if current_user and current_user == @post.user  %> 
+	<p><%= link_to 'delete post', @post, method: :delete %></p>
+<% end %> 
+
+<h3>New Comment</h3>
+	<%= form_for [@post, @comment] do |f| %>
+		<%= f.text_area :body %><br>
+		<%= f.submit %>
+	<% end %> 
+
+
+<h4>Comments</h4>
+	<div><% @post.comments.each do |comment| %> 
+		<p class='comments'><%= comment.body.reverse %></p></div>
+	<% end %>
+

@@ -10,7 +10,9 @@
 </p>
 <p>
 	Instrument of choice: <%= @user.instrument %> 
-</p>
+</p>   
+
+<%= link_to 'edit profile', edit_user_path(@user) %>
 
 <!-- 
  t.string   "username"

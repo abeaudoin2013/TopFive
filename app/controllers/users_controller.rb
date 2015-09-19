@@ -29,6 +29,11 @@ class UsersController < ApplicationController
   def destroy
   end 
 
+  def profile
+    @user = current_user
+    render :show
+  end 
+
   private
 
   def user_params
