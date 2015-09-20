@@ -10,15 +10,17 @@
 	<header>
 		<nav id='hi'>
 				<% if current_user %>
-					<span>Hello, <%= link_to current_user.username, profile_path %></span>
-					<%= link_to 'Latest Top Five', root_path %>
-					<%= link_to 'Edit', edit_user_path(current_user.id) %>
-					<%= link_to 'Log Out', sessions_path, method: :delete %>
-					<%= link_to 'Make New Post', new_post_path %>
-				<% else %>
-					<%= link_to 'Sign Up', new_user_path %>
-					<%= link_to 'Log In', login_path %>
-				<% end %>
+					<span id="welcome_user">Hello, <%= link_to current_user.username, profile_path %></span>
+					<ul>
+						<li><%= link_to 'Latest Top Five', root_path %></li>
+						<li><%= link_to 'Edit', edit_user_path(current_user.id) %></li>
+						<li><%= link_to 'Log Out', sessions_path, method: :delete %></li>
+						<li><%= link_to 'Make New Post', new_post_path %></li>
+					<% else %>
+						<li><%= link_to 'Sign Up', new_user_path %></li>
+						<li><%= link_to 'Log In', login_path %></li>
+					<% end %>
+				</ul>
 		</nav>
 	</header>
 		<% if flash[:notice] %>

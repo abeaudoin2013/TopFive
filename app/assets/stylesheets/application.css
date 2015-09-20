@@ -24,8 +24,15 @@ header {
 	border-bottom-width: 70%;
 	padding-bottom: .5em;
 }
-nav {
+li {
 	padding-left: .5em;
+	display: inline;
+	margin-right: 5em;
+	border-right: 1px solid black;
+	padding-right: 1em;
+}
+#welcome_user {
+	margin-right: 1em;
 }
 span {
 	float: right;
@@ -55,15 +62,9 @@ div {
 }
 a {
 	text-decoration: none;
-	color: #231E28;
 }
 .skinny {
 	margin-right: 0em;
-}
-nav a {
-	margin-right: 5em;
-	border-right: 1px solid black;
-	padding-right: 1em;
 }
 .comments {
 	border: 1px solid black;
