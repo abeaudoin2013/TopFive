@@ -5,15 +5,18 @@
 	<p><%= link_to 'delete post', @post, method: :delete %></p>
 <% end %> 
 
-<h3>New Comment</h3>
-	<%= form_for [@post, @comment] do |f| %>
-		<%= f.text_area :body %><br>
-		<%= f.submit %>
+<% if current_user %>
+	<h3>New Comment</h3>
+		<%= form_for [@post, @comment] do |f| %>
+			<%= f.text_area :body %><br>
+			<%= f.submit %>
+		<% end %> 
 	<% end %> 
 
 
 <h4>Comments</h4>
-	<div><% @post.comments.each do |comment| %> 
-		<p class='comments'><%= comment.body %></p></div>
+	<div><% @post.comments.reverse.each do |comment| %> 
+		<p class='comments'><%= comment.body %></p>
+		<p><%= link_to comment.user.username, comment.user %></p>
+	</div>
 	<% end %>
-

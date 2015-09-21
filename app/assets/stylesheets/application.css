@@ -16,7 +16,7 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300&subset=latin,latin-ext);
 
 body {
-	background-color: #F2E3D2;
+	background-color: #93BED7;
 	font-family: 'Open Sans', sans-serif;
 }
 header {
@@ -24,24 +24,34 @@ header {
 	border-bottom-width: 70%;
 	padding-bottom: .5em;
 }
+#flash {
+	width: auto;
+	height: auto;
+	font-size: 50%;
+	background-color: #8A6330;
+}
 li {
-	padding-left: .5em;
 	display: inline;
 	margin-right: 5em;
 	border-right: 1px solid black;
-	padding-right: 1em;
+	border-left: 1px solid black;
+	padding-right: .5em;
+	padding-left: .5em;
+}
+ul {
+	padding-left: 20px;
 }
 #welcome_user {
 	margin-right: 1em;
-}
-span {
 	float: right;
+	font-weight: bolder;
+	font-size: 1.25em;
 }
 main {
 	max-width: 550px;
 	margin: 0 auto;
-	background-color: #D97048;
-	height: 36em;
+	background-color: #274258;
+	height: 100%;
 	text-align: center;
 	border-radius: 15px;
 	border: 5px solid white;
@@ -49,7 +59,7 @@ main {
 }
 textarea {
 	width: 30em;
-	height: 10em;
+	height: 3em;
 	border-radius: 5px;
 }
 div {
@@ -67,7 +77,28 @@ a {
 	margin-right: 0em;
 }
 .comments {
-	border: 1px solid black;
+	font-family: arial;
+	font-size: 75%;
+	text-align: left;
+	padding: 0 5px 0 5px;
+	border-radius: 15px;
+	margin: 15px;
+}
+.post {
+	max-width: 500px;
+	max-height: 200px;
+	background-color: white;
+	margin: 2em;
+}
+#john {
+	float: left;
+	position: fixed;
+	z-index: -1;
+	width: 49%;
+	border-radius: 5px;
+	border: 2px solid white;
+	margin: 35px;
+	opacity: .6;
 }
 
 

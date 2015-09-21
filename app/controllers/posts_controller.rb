@@ -19,6 +19,7 @@ class PostsController < ApplicationController
 
   def show
     @comment = Comment.new
+    @comments = Comment.all
   end
 
   def destroy
@@ -31,7 +32,7 @@ class PostsController < ApplicationController
   def post_params
   	params.require(:post).permit(:body).merge(user: current_user)
   end 
-
+  
   def set_post
   	begin 
   		@post = Post.find(params[:id])

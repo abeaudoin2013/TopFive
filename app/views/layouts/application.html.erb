@@ -8,26 +8,28 @@
 </head>
 <body>
 	<header>
-		<nav id='hi'>
+		<nav>
 				<% if current_user %>
 					<span id="welcome_user">Hello, <%= link_to current_user.username, profile_path %></span>
 					<ul>
-						<li><%= link_to 'Latest Top Five', root_path %></li>
+						<li id='root'><%= link_to 'Latest Top Five', root_path %></li>
+						<li><%= link_to 'Make New Post', new_post_path %></li>
 						<li><%= link_to 'Edit', edit_user_path(current_user.id) %></li>
 						<li><%= link_to 'Log Out', sessions_path, method: :delete %></li>
-						<li><%= link_to 'Make New Post', new_post_path %></li>
 					<% else %>
+						<li><%= link_to 'Latest Top Five', root_path %></li>
 						<li><%= link_to 'Sign Up', new_user_path %></li>
 						<li><%= link_to 'Log In', login_path %></li>
 					<% end %>
 				</ul>
 		</nav>
 	</header>
-		<% if flash[:notice] %>
-			<%= flash[:notice] %>
-		<%end%>
+			
+	<%= image_tag('john.png', id: "john")%>
 	<main>
-	
+	<% if flash[:notice] %>
+			<div id='flash'><%= flash[:notice] %></div>
+		<%end%>
 	<%= yield %>
 	</main>
 
