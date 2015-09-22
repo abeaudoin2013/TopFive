@@ -19,6 +19,9 @@ body {
 	background-color: #93BED7;
 	font-family: 'Open Sans', sans-serif;
 }
+a {
+	color: #BA0504;
+}
 header {
 	border-bottom: 1px solid black;
 	border-bottom-width: 70%;
@@ -28,7 +31,11 @@ header {
 	width: auto;
 	height: auto;
 	font-size: 50%;
-	background-color: #8A6330;
+	background-color: #E8A651;
+	margin-top: 5px;
+	border: 1px solid black;
+	border-radius: 5px;
+	opacity: .5;
 }
 li {
 	display: inline;
@@ -99,6 +106,9 @@ a {
 	border: 2px solid white;
 	margin: 35px;
 	opacity: .6;
+}
+.avatar {
+	max-width: 530px;
 }
 
 

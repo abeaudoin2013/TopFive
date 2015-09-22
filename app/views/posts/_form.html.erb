@@ -1,4 +1,25 @@
 <%= form_for @post do |f| %>
-	<p><%= f.text_area :body %></p>
+	
+	<p><%= f.label :title %>
+		<%= f.text_area :title %>
+	</p>
+	<p>
+		<%= f.label :five %>
+		<%= f.text_field :five %>
+	</p>
+	<p>
+		<%= f.label :four %>
+		<%= f.text_field :four %>
+	</p>
+		<%= f.label :three %>
+		<%= f.text_field :three %>
+	<p>
+	<p>
+		<%= f.label :two %>
+		<%= f.text_field :two %>
+	</p>
+		<%= f.label :one %>
+		<%= f.text_field :one %>
+	<p>
 	<p><%= f.submit 'submit post', class: 'post_submit' %></p>
 <% end %>

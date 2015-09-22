@@ -1,6 +1,6 @@
 <h1>Welcome there <%= @user.username %></h1>
 <p>
-    <%= image_tag @user.avatar.url %>
+    <%= image_tag @user.avatar.url, class: "avatar" %>
 </p>
 <p>
 	Occupation: <%= @user.occupation %> 

@@ -1,4 +1,10 @@
-<p><%= @post.body %></p>
+<p><%= @post.title %></p>
+<p>#5 <%= @post.five %></p>
+<p>#4 <%= @post.four %></p>
+<p>#3 <%= @post.three %></p>
+<p>#2 <%= @post.two %></p>
+<p>#1 <%= @post.one %></p>
+
 
 <p>by <%= link_to @post.user.username, @post.user %></p>
 <% if current_user and current_user == @post.user  %> 
