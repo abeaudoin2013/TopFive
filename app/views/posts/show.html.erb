@@ -1,12 +1,18 @@
-<p><%= @post.title %></p>
-<p>#5 <%= @post.five %></p>
-<p>#4 <%= @post.four %></p>
-<p>#3 <%= @post.three %></p>
-<p>#2 <%= @post.two %></p>
-<p>#1 <%= @post.one %></p>
+<div class="things">
+		<h1><%= @post.title %></h1>
+		<div class="fiver">
+			<h6 class='list'>#5 <%= @post.five %></h6>
+			<h5 class='list'>#4 <%= @post.four %></h5>
+			<h4 class='list'>#3 <%= @post.three %></h4>
+			<h3 class='list'>#2 <%= @post.two %></h3>
+			<h2 class='list'>#1 <%= @post.one %></h2>
+		</div>
 
+<div class="post_maker">
+	<p>by <%= link_to @post.user.username, @post.user %></p>
+	<%= link_to (image_tag @post.user.avatar.url, class: 'user_pic'), @post.user %>
+</div>
 
-<p>by <%= link_to @post.user.username, @post.user %></p>
 <% if current_user and current_user == @post.user  %> 
 	<p><%= link_to 'delete post', @post, method: :delete %></p>
 <% end %> 
@@ -23,6 +29,7 @@
 <h4>Comments</h4>
 	<div><% @post.comments.reverse.each do |comment| %> 
 		<p class='comments'><%= comment.body %></p>
-		<p><%= link_to comment.user.username, comment.user %></p>
+		<p class='user_link'><%= link_to comment.user.username, comment.user %></p>
 	</div>
 	<% end %>
+</div>
