@@ -11,8 +11,12 @@ class UsersController < ApplicationController
 
   def create
   	@user = User.create(user_params)
-  	session[:user_id] = @user.id
-  	redirect_to @user, notice: "Welcome to Top Five"
+    if @user.save
+  	 session[:user_id] = @user.id
+  	 redirect_to @user, notice: "Welcome to Top Five"
+    else
+      render :new
+    end
   end 
 
   def show
@@ -37,7 +41,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-  	params.require(:user).permit(:username, :email, :password, :avatar, :occupation, :hometown, :instrument, :age)
+  	params.require(:user).permit(:username, :email, :password, :password_confirmation, :avatar, :occupation, :hometown, :instrument, :age)
   end 
 
   def set_user
