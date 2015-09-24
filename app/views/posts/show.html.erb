@@ -7,7 +7,7 @@
 			<h3 class='list'>#2 <%= @post.two %></h3>
 			<h2 class='list'>#1 <%= @post.one %></h2>
 		</div>
-
+<%= image_tag @post.pics.url(:medium) %>
 <div class="post_maker">
 	<p>by <%= link_to @post.user.username, @post.user %></p>
 	<%= link_to (image_tag @post.user.avatar.url, class: 'user_pic'), @post.user %>
