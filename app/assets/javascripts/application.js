@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+$(document).on('page:change ready', function() {
+	$('.post').on('ajax:success', function() {
+		$(this).fadeOut();
+	});
+});

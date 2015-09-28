@@ -8,11 +8,21 @@ class PostsController < ApplicationController
 
   def new
   	@post = Post.new
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
+    sleep 1
   	@post = Post.create(post_params)
-  	redirect_to posts_path, notice: "Squibbily Dibbily Doo!"
+    if @post.save
+      respond_to do |format|   
+      	format.html {redirect_to posts_path, notice: "Squibbily Dibbily Doo!"}
+        format.js 
+      end
+    end
   end 
 
   def edit
@@ -25,7 +35,10 @@ class PostsController < ApplicationController
 
   def destroy
   	@post.destroy
-  	redirect_to posts_path, notice: "Deleted!"
+    respond_to do |format|
+      format.html {redirect_to posts_path, notice: "Deleted!"}
+      format.js {render nothing: true}
+    end
   end 
 
   private

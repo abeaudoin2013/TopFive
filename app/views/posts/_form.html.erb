@@ -1,29 +1,32 @@
-<%= form_for @post do |f| %>
+<%= form_for @post, remote: true, :authenticity_token => true do |f| %>
 	
-	<p><%= f.label :title %>
+	<p class='tres'>
+		<%= f.label :title %>
 		<%= f.text_area :title %>
 	</p>
-	<p>
+	<p class='tres'>
 		<%= f.label :pics %>
 		<%= f.file_field :pics %>
 	</p>
-	<p>
+	<p class='tres'>
 		<%= f.label :five %>
 		<%= f.text_field :five %>
 	</p>
-	<p>
+	<p class='tres'>
 		<%= f.label :four %>
 		<%= f.text_field :four %>
 	</p>
+	<p class="tres">
 		<%= f.label :three %>
 		<%= f.text_field :three %>
-	<p>
-	<p>
+	</p>
+	<p class='tres'>
 		<%= f.label :two %>
 		<%= f.text_field :two %>
 	</p>
+	<p class='tres'>
 		<%= f.label :one %>
 		<%= f.text_field :one %>
-	<p>
-	<p><%= f.submit 'submit post', class: 'post_submit' %></p>
+	</p>
+	<p class='tres'><%= f.submit 'submit post', class: 'post_submit', data: {disable_with: "Submitting..."} %></p>
 <% end %>
