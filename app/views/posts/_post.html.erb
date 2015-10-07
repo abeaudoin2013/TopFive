@@ -1,11 +1,17 @@
-<div class='post'>
-	<% if post.pics? %>
-		<%= link_to (image_tag post.pics.url(:medium), class: 'post-pic'), post %>
-	<% elsif post.title? %> 
-		<%= link_to post.title, post %>
-	<% end %>
 
-	<% if current_user and current_user == post.user  %> 
-		<p><%= link_to 'delete post', post, method: :delete, remote: true, data: {confirm: "You sure you want to delete this?"} %></p>
-	<% end %>
-</div>
+	<div class='post'>
+		<% if post.pics? %>
+			<%= link_to (image_tag post.pics.url(:medium), class: 'post-pic'), post %>
+		<% elsif post.title? %> 
+			<h1><%= link_to post.title, post %></h1>
+			<p><%= link_to post.five, post %></p>
+			<p><%= link_to post.four, post %></p>
+			<p><%= link_to post.three, post %></p>
+			<p><%= link_to post.two, post %></p>
+			<p><%= link_to post.one, post %></p>
+		<% end %>
+
+		<% if current_user and current_user == post.user  %> 
+			<p id ='deleter'><%= link_to 'delete', post, method: :delete, remote: true, data: {confirm: "You sure you want to delete this?"} %></p>
+		<% end %>
+	</div>

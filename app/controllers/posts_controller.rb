@@ -15,13 +15,14 @@ class PostsController < ApplicationController
   end
 
   def create
-    sleep 1
   	@post = Post.create(post_params)
     if @post.save
       respond_to do |format|   
       	format.html {redirect_to posts_path, notice: "Squibbily Dibbily Doo!"}
         format.js 
       end
+    else
+      render :new
     end
   end 
 

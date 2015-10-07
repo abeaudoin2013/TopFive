@@ -18,4 +18,10 @@ $(document).on('page:change ready', function() {
 	$('.post').on('ajax:success', function() {
 		$(this).fadeOut();
 	});
+
+	$('.motha').on('click', function() {
+		$('#new-post').animate({
+			height: '400px'
+		}, 1500);
+	});
 });

@@ -1,3 +1,4 @@
+<div id="you_know_it">
 <%= form_for @post, remote: true, :authenticity_token => true do |f| %>
 	
 	<p class='tres'>
@@ -30,3 +31,4 @@
 	</p>
 	<p class='tres'><%= f.submit 'submit post', class: 'post_submit', data: {disable_with: "Submitting..."} %></p>
 <% end %>
+</div>

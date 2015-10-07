@@ -28,12 +28,12 @@ header {
 	padding-bottom: .5em;
 }
 #flash {
-	width: 100px;
+	max-width: 120px;
 	height: auto;
 	text-align: center;
 	font-size: 50%;
 	background-color: #E8A651;
-	margin: 0 auto;
+	margin: 5px auto 0 auto;
 	border: 1px solid black;
 	border-radius: 5px;
 	opacity: .3;
@@ -114,6 +114,9 @@ main {
 	border-radius: 5px;
 	margin-bottom: 5px;
 	border: 1px solid black;
+}
+#deleter {
+	font-size: .1em;
 }
 .post:hover {
 	background-color: #DFDEFF;
