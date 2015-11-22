@@ -27,10 +27,16 @@ class UsersController < ApplicationController
 
   def update
   	@user.update(user_params)
-  	redirect_to @user, notice: "Updated!"
+    if @user.save
+  	 redirect_to @user, notice: "Updated!"
+    else
+      render :edit
+    end
   end 
 
   def destroy
+    @user.destroy
+    redirect_to users_path
   end 
 
   def profile
