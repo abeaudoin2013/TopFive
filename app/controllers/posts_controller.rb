@@ -22,7 +22,7 @@ class PostsController < ApplicationController
         format.js 
       end
     else
-      render :new
+      render :new, notice: "You need a title for your post"
     end
   end 
 
