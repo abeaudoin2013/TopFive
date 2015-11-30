@@ -1,29 +1,10 @@
-== README
+==Top Five 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hi, welcome to Top Five. This is an app for discussing the best of the best in whatever category you'd like. 
 
-Things you may want to cover:
+Users are able to upload photos thanks to the paperclip gem, that means you must run <tt>bundle install</tt> after pulling the repository. 
 
-* Ruby version
+Also, be sure to run <tt>rake db:migrate</tt> to create the database. 
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Have fun!
 
